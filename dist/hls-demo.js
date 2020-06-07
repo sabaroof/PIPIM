@@ -1410,21 +1410,21 @@ module.exports = {
     nudgeMaxRetry: 5
   }),
   borat: {
-    url: 'https://github.com/sabaroof/PIPIM/tree/master/hls.js/tests/borat_hsl_playlist.m3u8',
+    url: 'https://github.com/sabaroof/PIPIM/blob/master/tests/borat_hsl_playlist.m3u8',
     description: 'Borat mówi dziękuje',
     live: false,
     abr: false,
     blacklist_ua: []
   },
   LabScreenCap1: {
-    url: 'https://github.com/sabaroof/PIPIM/tree/master/hls.js/tests/hsl_playlist1.m3u8',
+    url: 'https://github.com/sabaroof/PIPIM/blob/master/tests/hsl_playlist1.m3u8',
     description: 'Pierwszy screencap z projektu',
     live: false,
     abr: false,
     blacklist_ua: []
   },
   LabScreenCap2: {
-    url: 'https://github.com/sabaroof/PIPIM/tree/master/hls.js/tests/hsl_playlist2.m3u8',
+    url: 'https://github.com/sabaroof/PIPIM/blob/master/tests/hsl_playlist2.m3u8',
     description: 'Drugi screencap z projektu',
     live: false,
     abr: false,
