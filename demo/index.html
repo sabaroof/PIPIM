@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hls.js demo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.2/ace.js"></script-->
+  </head>
+  <body>
+    <div class="header-container">
+      <header class="wrapper clearfix">
+        <h1 class="title">
+          PIPIM - PROJEKT
+        </h1>
+      </header>
+    </div>
+
+    <div class="main-container">
+      <header>
+        <p>
+          Miłosz Sabadach
+	</p>
+      <div id="controls">
+          <select id="streamSelect" class="innerControls">
+            <option value="" selected>Select a test-stream from drop-down menu. Or enter custom URL below</option>
+          </select>
+
+          <input id="streamURL" class="innerControls" type=text value=""/>
+
+          <label class="innerControls">
+            Player size:
+            <select id="videoSize" style="float:right;">
+              <option value="240">Tiny (240p)</option>
+              <option value="384">Small (384p)</option>
+              <option value="480">Medium (480p)</option>
+              <option value="720" selected>Large (720p)</option>
+              <option value="1080">Huge (1080p)</option>
+            </select>
+          </label>
+
+          <label class="innerControls">
+            Current video-resolution:
+            <span id="currentResolution">/</span>
+          </label>
+      </div>
+
+      <video id="video" controls autoplay class="videoCentered"></video>
+      <br>
+      <canvas id="bufferedCanvas" height="15" class="videoCentered" onclick="onClickBufferedRange(event);"></canvas>
+      <br>
+      <br>
+      <label class="center">Status:</label>
+      <pre id="statusOut" class="center" style="white-space: pre-wrap;"></pre>
+
+      <div class="center" id='qualityLevelControlTab'>
+        <h4>Quality-levels</h4>
+        <center>
+            <table>
+                <tr>
+                  <td>
+                    <p>Currently played level:</p>
+                  </td>
+                  <td>
+                    <div id="currentLevelControl" style="display: inline;"></div>
+                  </td>
+                </tr>
+	    </table>
+        </center>
+      </div>
+    
+    </div>
+
+    <footer>
+      <br><br><br><br><br><br>
+    </footer>
+
+    <!-- Demo page required libs -->
+    <script src="canvas.js"></script>
+    <script src="metrics.js"></script>
+    <script src="libs/jsonpack.js"></script>
+
+    <!-- demo build -->
+    <script src="../dist/hls.js"></script>
+    <script src="../dist/hls-demo.js"></script>
+  </body>
+</html>
+
