@@ -45,7 +45,7 @@ module.exports = {
   }
   ),
   borat: {
-  	url: 'https://github.com/sabaroof/PIPIM/blob/master/tests/borat_hsl_playlist.m3u8',
+  	url: 'file:///root/PIPIM/tests/borat_hsl_playlist.m3u8',
   	description: 'Borat mówi dziękuje',
   	live: false,
   	abr: false,
