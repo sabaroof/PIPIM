@@ -2,6 +2,7 @@
 
 ### Środowisko
 Projekt został wykonany na maszynie wirtualnej z guest OS'em Manjaro Linux, dystrybucji bazującej na Arch Linux.
+
 Wersja oprogramowania na której testowany był projekt: _20.0.1_
 
 ### Problemy
@@ -16,8 +17,6 @@ By ominąć to zabezpieczenie, początkowo próbowałem zmieniać ustawienia prz
 W związku z tym, postanowiłem uruchomić serwer Apache i na nim hostować kod ze stroną, co również spowodowało problemy - Apache nie pozwalało na wczytanie lokalnych resource'ów (Not allowed to load local resources).
 
 Aby obejść te ograniczenia, musiałem dodać nagłówek pozwalający na obejście tego zabezpieczenia w pliku httpd.conf, skonfigurować przeglądarkę Google Chrome oraz uruchamiać ją z odpowiednimi parametrami, a także zmienić w kodzie URL playlist na 'http://127.0.1.1/...'
-
-jak postawic serwer apache na manjaro:
 
 
 ### Przygotowanie środowiska
