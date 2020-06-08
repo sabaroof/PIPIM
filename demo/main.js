@@ -355,6 +355,8 @@ function loadSelectedStream () {
     }
     trimEventHistory();
     window.refreshCanvas();
+    console.log('bitrate wynosi' + event.bw);
+    document.getElementById('bitrate').innerHTML = 'Bitrate wynosi: ' + event.bw;
     updateLevelInfo();
 
     let latency = data.stats.tfirst - data.stats.trequest;
@@ -655,6 +657,8 @@ function handleVideoEvent (evt) {
     break;
   case 'resize':
     data = evt.target.videoWidth + '/' + evt.target.videoHeight;
+    document.getElementById('width').innerHTML = 'Width: ' + evt.target.videoWidth;
+    document.getElementById('height').innerHTML = 'Height: ' + evt.target.videoHeight;
     break;
   case 'loadedmetadata':
   case 'loadeddata':
@@ -1017,6 +1021,8 @@ function updateLevelInfo () {
 
   if (v.videoWidth && v.videoHeight) {
     $('#currentResolution').html(v.videoWidth + ' x ' + v.videoHeight);
+    document.getElementById('width').innerHTML = 'Width: ' + v.videoWidth;
+    document.getElementById('height').innerHTML = 'Height: ' + v.videoHeight;
   }
 
   if ($('#currentLevelControl').html() !== html1) {

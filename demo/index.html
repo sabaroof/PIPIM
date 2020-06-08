@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>hls.js demo</title>
+    <title>PIPIM - PROJEKT</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="style.css">
@@ -24,28 +24,44 @@
       <header>
         <p>
           Miłosz Sabadach
-	</p>
-      <div id="controls">
-          <select id="streamSelect" class="innerControls">
-            <option value="" selected>Select a test-stream from drop-down menu. Or enter custom URL below</option>
-          </select>
+		</p>
+		
+		<select id="streamSelect">
+            <option value="" selected>Wybierz playlistę z listy lub wpisz URL.</option>
+        </select>
+		
+		<input id="streamURL" class="innerControls" type=text value=""/>
 
-          <input id="streamURL" class="innerControls" type=text value=""/>
-
-          <label class="innerControls">
-            Player size:
+		<div class="center" id='qualityLevelControlTab'>
+        <h4>Jakość wideo</h4>
+        <center>
+            <table>
+                <tr>
+                  <td>
+                    <p>Obecnie odtwarzany poziom:</p>
+                  </td>
+                  <td>
+                    <div id="currentLevelControl" style="display: inline;"></div>
+                  </td>
+                </tr>
+	    </table>
+        </center>
+      </div>
+      
+      <div id="metrics">
+      	<h3 id="bitrate">Bitrate</h2>
+      	<h3 id="width">Width</h2>
+      	<h3 id="height">Height</h2>
+      	         
+          <label>
+            Rozmiar odtwarzacza:
             <select id="videoSize" style="float:right;">
-              <option value="240">Tiny (240p)</option>
-              <option value="384">Small (384p)</option>
-              <option value="480">Medium (480p)</option>
-              <option value="720" selected>Large (720p)</option>
-              <option value="1080">Huge (1080p)</option>
+              <option value="240">Bardzo mały</option>
+              <option value="384">Mały</option>
+              <option value="480">Średni</option>
+              <option value="720" selected>Duży</option>
+              <option value="1080">Bardzo duży</option>
             </select>
-          </label>
-
-          <label class="innerControls">
-            Current video-resolution:
-            <span id="currentResolution">/</span>
           </label>
       </div>
 
@@ -56,22 +72,6 @@
       <br>
       <label class="center">Status:</label>
       <pre id="statusOut" class="center" style="white-space: pre-wrap;"></pre>
-
-      <div class="center" id='qualityLevelControlTab'>
-        <h4>Quality-levels</h4>
-        <center>
-            <table>
-                <tr>
-                  <td>
-                    <p>Currently played level:</p>
-                  </td>
-                  <td>
-                    <div id="currentLevelControl" style="display: inline;"></div>
-                  </td>
-                </tr>
-	    </table>
-        </center>
-      </div>
     
     </div>
 

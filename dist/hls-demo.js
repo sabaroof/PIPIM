@@ -473,6 +473,8 @@ function loadSelectedStream() {
 
     trimEventHistory();
     window.refreshCanvas();
+    console.log('bitrate wynosi' + event.bw);
+    document.getElementById('bitrate').innerHTML = 'Bitrate wynosi: ' + event.bw;
     updateLevelInfo();
     var latency = data.stats.tfirst - data.stats.trequest;
     var parsing = data.stats.tparsed - data.stats.tload;
@@ -804,6 +806,8 @@ function handleVideoEvent(evt) {
 
     case 'resize':
       data = evt.target.videoWidth + '/' + evt.target.videoHeight;
+      document.getElementById('width').innerHTML = 'Width: ' + evt.target.videoWidth;
+      document.getElementById('height').innerHTML = 'Height: ' + evt.target.videoHeight;
       break;
 
     case 'loadedmetadata':
@@ -1179,6 +1183,8 @@ function updateLevelInfo() {
 
   if (v.videoWidth && v.videoHeight) {
     $('#currentResolution').html(v.videoWidth + ' x ' + v.videoHeight);
+    document.getElementById('width').innerHTML = 'Width: ' + v.videoWidth;
+    document.getElementById('height').innerHTML = 'Height: ' + v.videoHeight;
   }
 
   if ($('#currentLevelControl').html() !== html1) {
@@ -1410,21 +1416,21 @@ module.exports = {
     nudgeMaxRetry: 5
   }),
   borat: {
-    url: 'file:///root/PIPIM/tests/borat_hsl_playlist.m3u8',
+    url: 'http://127.0.1.1/PIPIM/tests/borat_hsl_playlist.m3u8',
     description: 'Borat mówi dziękuje',
     live: false,
     abr: false,
     blacklist_ua: []
   },
   LabScreenCap1: {
-    url: 'https://github.com/sabaroof/PIPIM/blob/master/tests/hsl_playlist1.m3u8',
+    url: 'http://127.0.1.1/PIPIM/tests/hsl_playlist1.m3u8',
     description: 'Pierwszy screencap z projektu',
     live: false,
     abr: false,
     blacklist_ua: []
   },
   LabScreenCap2: {
-    url: 'https://github.com/sabaroof/PIPIM/blob/master/tests/hsl_playlist2.m3u8',
+    url: 'http://127.0.1.1/PIPIM/tests/hsl_playlist2.m3u8',
     description: 'Drugi screencap z projektu',
     live: false,
     abr: false,
