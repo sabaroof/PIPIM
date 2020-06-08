@@ -45,10 +45,12 @@ jak postawic serwer apache na manjaro:
 [msabadac-vm PIPIM]# sudo vim /etc/httpd/conf/httpd.conf
 ```
 Zakomentuj poniższą linię:
-```# LoadModule unique_id_module modules/mod_unique_id.so
+```
+# LoadModule unique_id_module modules/mod_unique_id.so
 ```
 Dodaj poniższy nagłówek w sekcji <Directory/>:
-``` Header Set Access-Control-Allow-Origin "*" 
+``` 
+Header Set Access-Control-Allow-Origin "*" 
 ```
 
 * Krok 5: Przenieś pobrane repozytorium do serwera Apache
@@ -84,5 +86,6 @@ Dodaj poniższy nagłówek w sekcji <Directory/>:
 ```
 
 * Krok 4: Wejdź na stronę korzystając z URL:
-```http://127.0.1.1/PIPIM/demo/
+```
+http://127.0.1.1/PIPIM/demo/
 ```
